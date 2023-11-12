@@ -76,8 +76,10 @@ public:
 			system("cls");
 			cout << "Menu" << endl;
 			cout << "1) Product information" << endl;
-			cout << "2) Add product to order" << endl;
-			cout << "3) Other" << endl;
+			cout << "2) Laptop information" << endl;
+			cout << "3) Computer information" << endl;
+			cout << "4) Other information" << endl;
+			cout << "5) Add product to order" << endl;
 			cout << "0) Exit" << endl;
 			cout << "Your choice is:";
 			cin >> check;
@@ -93,6 +95,21 @@ public:
 				system("pause");
 				break;
 			case 2:
+				system("cls");
+				client.display_laptop();
+				system("pause");
+				break;
+			case 3:
+				system("cls");
+				client.display_computer();
+				system("pause");
+				break;
+			case 4:
+				system("cls");
+				client.display_other();
+				system("pause");
+				break;
+			case 5:
 				system("cls");
 				client.add_product_to_order();
 				system("pause");

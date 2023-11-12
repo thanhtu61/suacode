@@ -3,7 +3,10 @@
 User::User() {
 
 	ProductList = new List<Product>;
-	read_list_product(ProductList);
+	LaptopList = new List<Product>;
+	ComputerList = new List<Product>;
+	OtherList = new List<Product>;
+	read_list_product(ProductList, LaptopList, ComputerList, OtherList);
 }
 
 User::~User() {
@@ -41,7 +44,44 @@ void User::display_product() {
 		cout << endl;
 	}
 }
-void User::read_list_product(List<Product>* products) {
+void User::display_laptop() {
+	Item<Product>* current = new Item<Product>;
+	current = LaptopList->getHead();
+	cout << "LAPTOP:" << endl;
+	while (current != nullptr) {
+		cout << "ID:" << current->data->getproductId() << "   ";
+		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
+		cout << "price:" << current->data->getPrice() << "   ";
+		current = current->next;
+		cout << endl;
+	}
+}
+void User::display_computer() {
+	Item<Product>* current = new Item<Product>;
+	current = ComputerList->getHead();
+	cout << "COMPUTER:" << endl;
+	while (current != nullptr) {
+		cout << "ID:" << current->data->getproductId() << "   ";
+		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
+		cout << "price:" << current->data->getPrice() << "   ";
+		current = current->next;
+		cout << endl;
+	}
+}
+void User::display_other() {
+	Item<Product>* current = new Item<Product>;
+	current =OtherList->getHead();
+	cout << "OTHER:" << endl;
+	while (current != nullptr) {
+		cout << "ID:" << current->data->getproductId() << "   ";
+		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
+		cout << "price:" << current->data->getPrice() << "   ";
+		current = current->next;
+		cout << endl;
+	}
+}
+
+void User::read_list_product(List<Product>* products, List<Product>*laptop, List<Product>*computer, List<Product>*other) {
 	ifstream filein;
 	filein.open("Product.txt", ios::in);
 	Product* x = NULL;
@@ -54,17 +94,20 @@ void User::read_list_product(List<Product>* products) {
 			if (a == 'O') {
 				x = new OtherProduct;
 				x->read_file_product(filein);
+				other->insert_back(x);
 				products->insert_back(x);
 			}
 			else if (a == 'L') {
-				x = new ComProduct;
+				x = new LapProduct;
 				x->read_file_product(filein);
+				laptop->insert_back(x);
 				products->insert_back(x);
 
 			}
 			else if (a == 'C') {
-				x = new LapProduct;
+				x = new ComProduct;
 				x->read_file_product(filein);
+				computer->insert_back(x);
 				products->insert_back(x);
 			}
 		}

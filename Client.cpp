@@ -78,37 +78,79 @@
 		getline(filein, address, '\n');
 	}
 
+
 	void Client::add_product_to_order() {
 		ofstream fileout;
 		fileout.open("Order.txt", ios::app);
 		fileout << "\n" << user;
 		display_product();
 
-		//List<Product>* lpOrder= new List<Product>;
 		int check = 1;
+		cout << "\nChoose product: ";
+		cin.ignore(1,'\n');
 		while (check != 0) {
-			cout << "\nchon san pham:";
-			cin.ignore();
+			
 			string n;
 			getline(cin, n);
 
 			Item<Product>* current = ProductList->getHead();
+			bool productFound = false;
 			while (current != nullptr) {
 				if (current->data->getproductId() == n) {
 					Product* temp = current->data;
-					//lpOrder->insert_back(temp);
+					productFound = true;
 					fileout << ", " << temp->getproductId() << ", " << temp->getPrice();
 					break;
 				}
 				current = current->next;
 			}
-			cout << "nhap 1 de tiep tuc mua hang" << endl;
-			cout << "nhap 0 de ket thuc mua hang" << endl;
-			cout << "your choise is:"; cin >> check;
-			cin.ignore();
 
+			if (!productFound) {
+				cout << "Product not found. Please try again." << endl;
+				continue;
+			}
+
+			cout << "Enter 1 to continue shopping" << endl;
+			cout << "Enter 0 to complete the purchase" << endl;
+			cout << "Your choice is: ";
+			cin >> check;
+			if(check==1)cout << "\nChoose product: ";
+			
+			cin.ignore();
 		}
 		fileout.close();
 	}
+	//void Client::add_product_to_order() {
+	//	ofstream fileout;
+	//	fileout.open("Order.txt", ios::app);
+	//	fileout << "\n" << user;
+	//	display_product();
+
+	//	//List<Product>* lpOrder= new List<Product>;
+	//	int check = 1;
+	//	while (check != 0) {
+	//		cout << "\nchon san pham:";
+	//		cin.ignore();
+	//		string n;
+	//		getline(cin, n);
+
+	//		Item<Product>* current = ProductList->getHead();
+	//		while (current != nullptr) {
+	//			if (current->data->getproductId() == n) {
+	//				Product* temp = current->data;
+	//				//lpOrder->insert_back(temp);
+	//				fileout << ", " << temp->getproductId() << ", " << temp->getPrice();
+	//				break;
+	//			}
+	//			current = current->next;
+	//		}
+	//		cout << "nhap 1 de tiep tuc mua hang" << endl;
+	//		cout << "nhap 0 de ket thuc mua hang" << endl;
+	//		cout << "your choise is:"; cin >> check;
+	//		cin.ignore();
+
+	//	}
+	//	fileout.close();
+	//}
 
 

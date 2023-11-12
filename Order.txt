@@ -1,8 +1,6 @@
-11, abc, 111
-22, dfwd, 2130
-C8, 123
-0, O1, 112
-0, L1, 2500
-0, C3, 4700
 thanhtu1, L1, 2500
 thanhtu1, L1, 2500
+thanhtu1, O1, 112
+thanhtu1, O1, 112
+thanhtu1, O1, 112, O2, 137
+thanhtu1, O1, 112, O2, 137, L1, 2500

@@ -6,4 +6,3 @@ L3, Asus_Vivobook_A515EA, 2200
 C1, PC_CPS Gaming_G5-AMD, 1800
 C2, PC_Asus_Rog_Strix_G10DK, 1990
 C3, PC_CPS_Gaming_G8-AMD, 4700
-L3, name, 222
