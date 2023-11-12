@@ -4,6 +4,3 @@
 4, tien, namdinh
 5, a, 1
 6, thanhson, nam
-7, lan, cuoi
-8, thnah, ko
-9, thanhthuy, ko

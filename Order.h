@@ -22,6 +22,7 @@ public:
 	Order() {
 		Pr = new List<Product>;
 	}
+	
 	Client getClient() { return Cl; }
 	List<Product>* getListProduct() { return Pr; }
 

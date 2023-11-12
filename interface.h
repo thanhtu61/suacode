@@ -10,7 +10,7 @@
 #include<string>
 class Interface
 {
-protected:
+private:
 	Admin admin;
 	Client client;
 public:
@@ -75,8 +75,8 @@ public:
 		do {
 			system("cls");
 			cout << "Menu" << endl;
-			cout << "1) Computer" << endl;
-			cout << "2) Laptop" << endl;
+			cout << "1) Product information" << endl;
+			cout << "2) Add product to order" << endl;
 			cout << "3) Other" << endl;
 			cout << "0) Exit" << endl;
 			cout << "Your choice is:";
@@ -96,10 +96,11 @@ public:
 				system("cls");
 				client.add_product_to_order();
 				system("pause");
-				break;
+				return ;
 			}
 
 		} while (check !=0);
+
 	}
 	void menu() {
 		int choose;
@@ -126,8 +127,8 @@ public:
 				cout << "1)Sign in" << endl;
 				cout << "2)Sign up" << endl;
 				cout << "3)Sign in as a guest" << endl;
-				cout << "Your choice is:";
 				cout << "0) Exit" << endl;
+				cout << "Your choice is:";
 				int n; cin >> n;
 				switch (n) {
 				case 0:
@@ -153,9 +154,12 @@ public:
 					system("pause");
 					break;
 
-					/*case 3:
-						menu_client_not_login();
-						break;*/
+				case 3:
+					system("cls");
+					client.display_product();
+					cout << "\nLogin to order!!!";
+					system("pause");
+					break;
 				default:
 					cout << "FAULT";
 					break;

@@ -1,8 +1,9 @@
+
 #pragma once
 #include<iostream>
 #include<string>
 #include <fstream>
-#include"OtherProduct.h"
+
 using namespace std;
 template <class T>
 struct Item {
@@ -20,14 +21,8 @@ private:
     int length;
 
 public:
-    List() : head(nullptr), tail(nullptr), length(0) {}
-    /* ~List() {
-         while (head != nullptr) {
-             Item<T>* temp = head;
-             head = head->next;
-             delete temp;
-         }
-     }*/
+    List();
+    ~List();
     Item<T>* getHead();
     
     void insert_front(T* value);
@@ -37,12 +32,21 @@ public:
     void delete_back();
     void deleteAt(int pos);
     void update(T* value, int pos);
-    void display();
-    
-    //List <OtherProduct>read_file_other();
-    //void read_file(string FILE_OF_DATA);	
-    //void write_file(string FILE_OF_DATA);
 };
+
+
+
+template <class T>
+List<T> ::List() : head(nullptr), tail(nullptr), length(0) {}
+
+template <class T>
+List<T> ::~List() {
+    while (head != nullptr) {
+        Item<T>* temp = head;
+        head = head->next;
+        delete temp;
+    }
+}
 template <class T>
 Item<T>* List<T> ::getHead() {
     return head;
@@ -60,13 +64,13 @@ void List<T> ::insert_front(T* value) {
         newItem->next = nullptr;
         head = newItem;
         tail = newItem;
-       // std::cout << "Element inserted1" << std::endl;
+        // std::cout << "Element inserted1" << std::endl;
     }
     else {
         newItem->next = head;
         head->prev = newItem;
         head = newItem;
-       // std::cout << "Element inserted2" << std::endl;
+        // std::cout << "Element inserted2" << std::endl;
     }
 }
 
@@ -82,13 +86,13 @@ void List<T> ::insert_back(T* value) {
 
         head = newItem;
         tail = newItem;
-       // std::cout << "Element inserted3" << std::endl;
+        // std::cout << "Element inserted3" << std::endl;
     }
     else {
         newItem->prev = tail;
         tail->next = newItem;
         tail = newItem;
-       // std::cout << "Element inserted4" << std::endl;
+        // std::cout << "Element inserted4" << std::endl;
     }
 }
 
@@ -249,15 +253,8 @@ void List <T> ::update(T* value, int pos) {
     cout << "Node updated" << endl;
 }
 
-//template <class T>
-//void List <Product> ::display() {
-//    Item<Product>* current =new Item<Product>;
-//    current = head;
-//    while (current != nullptr) {
-//        cout<<"ID:" << current->data->getproductId()<<"   ";
-//        cout<<"name:" << current->data->getName() << "   ";
-//        cout<<"price:" << current->data->getPrice() << "   ";
-//        current = current->next;
-//        cout << endl;
-//    }
-//}
+
+
+
+
+
