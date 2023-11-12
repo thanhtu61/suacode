@@ -34,6 +34,7 @@ public:
 		filein >> temp;
 		Cl.setUserId(temp);
 		filein.seekg(2, 1);
+
 		char check_n=' ';
 		while (check_n !='\n') {
 			char check= ' ';
@@ -71,8 +72,8 @@ public:
 			filein >> a;
 			if (a != ' ') {
 				filein.seekg(-1, ios::cur);
-				Order* x = new Order;
-				x->read_order(filein);
+				Order* x = new Order; cout << "so1";
+				x->read_order(filein); cout << "so2";
 				cout << x->getClient().get_userId();
 				listOrder->insert_back(x);
 			}
@@ -99,7 +100,18 @@ public:
 			cout << endl;
 		}
 	}
-	
+	void write_file(Order* a) {
+		ofstream fileout;
+		fileout.open("Order.txt", ios::out | ios::app);
+		fileout << "\n";
+		Item<Product>* product;
+		product = a->getListProduct()->getHead();
+		fileout << a->getClient().get_userId();
+			while (product != nullptr) {
+				fileout << ", " << product->data->getproductId() << ", " << product->data->getPrice();
+			}
+		fileout.close();
+	}
 	/*void write_list_order (List<Order>* order) {
 		ofstream fileout;
 		fileout.open("Order.txt", ios::out);

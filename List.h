@@ -60,13 +60,13 @@ void List<T> ::insert_front(T* value) {
         newItem->next = nullptr;
         head = newItem;
         tail = newItem;
-        std::cout << "Element inserted1" << std::endl;
+       // std::cout << "Element inserted1" << std::endl;
     }
     else {
         newItem->next = head;
         head->prev = newItem;
         head = newItem;
-        std::cout << "Element inserted2" << std::endl;
+       // std::cout << "Element inserted2" << std::endl;
     }
 }
 
@@ -82,13 +82,13 @@ void List<T> ::insert_back(T* value) {
 
         head = newItem;
         tail = newItem;
-        std::cout << "Element inserted3" << std::endl;
+       // std::cout << "Element inserted3" << std::endl;
     }
     else {
         newItem->prev = tail;
         tail->next = newItem;
         tail = newItem;
-        std::cout << "Element inserted4" << std::endl;
+       // std::cout << "Element inserted4" << std::endl;
     }
 }
 

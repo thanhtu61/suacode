@@ -104,7 +104,8 @@ public:
 		ifstream is;
 		is.open("accountAdmin.txt", ios::in);
 
-		cout << "enter\nuser name:";
+		cout << "user name:";
+		cin.ignore();
 		char* u = new char[50]; cin.getline(u, 50);
 		cout << "password:";
 		int p; cin >> p;

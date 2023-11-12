@@ -37,7 +37,7 @@ public:
 	}
 	friend istream& operator>>(istream& is, User& a)
 	{
-		cout << "user:";
+		cout << "user name:";
 		is >> a.user;
 		cout << "address:";
 		is>>a.address;
@@ -100,8 +100,6 @@ public:
 		delete x;
 		fileout.close();
 	}
-	
-	
 };
 
 

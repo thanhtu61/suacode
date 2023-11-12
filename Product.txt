@@ -8,3 +8,4 @@ C2, PC Asus Rog Strix G10DK, 1990
 C3, PC_CPS_Gaming_G8-AMD, 4700
 C3, mayhoc, 1111
 C8, fsfsfs, 123
+C5, themveo, 1111

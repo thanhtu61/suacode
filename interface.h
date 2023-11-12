@@ -1,5 +1,6 @@
 #pragma once
 #include"Admin.h"
+#include"Client.h"
 #include"Product.h"
 #include"List.h"
 #include"User.h"
@@ -11,7 +12,7 @@ class Interface
 {
 protected:
 	Admin admin;
-	//Client client;
+	Client client;
 public:
 	Interface() {};
 	void menu_admin() {
@@ -69,11 +70,99 @@ public:
 
 			} while (check != 0);
 		}
-	/*void menu_client() {
+	void menu_client() {
 		int check;
 		do {
-			cout<<"1) "
+			system("cls");
+			cout << "Menu" << endl;
+			cout << "1) Computer" << endl;
+			cout << "2) Laptop" << endl;
+			cout << "3) Other" << endl;
+			cout << "0) Exit" << endl;
+			cout << "Your choice is:";
+			cin >> check;
+			switch (check) {
+			case 0:
+				system("cls");
+				cout << "Exit";
+				system("pause");
+				break;
+			case 1:
+				system("cls");
+				client.display_product();
+				system("pause");
+				break;
+			case 2:
+				system("cls");
+				client.add_product_to_order();
+				system("pause");
+				break;
+			}
 
-		} while ();
-	}*/
+		} while (check !=0);
+	}
+	void menu() {
+		int choose;
+		do {
+			cout << "Access by:" << endl;
+			cout << "1) Admin" << endl;
+			cout << "2) Client" << endl;
+			cout << "0) Exit" << endl;
+			cout << "Your choice is:";
+			cin >> choose;
+			switch (choose) {
+			case 0:
+				system("cls");
+				cout << "Exit";
+				system("pause");
+				break;
+			case 1:
+				system("cls");
+				if (admin.log_in_admin() == true) { menu_admin(); }
+				else menu();
+				system("pause");
+			case 2:
+				system("cls");
+				cout << "1)Sign in" << endl;
+				cout << "2)Sign up" << endl;
+				cout << "3)Sign in as a guest" << endl;
+				cout << "Your choice is:";
+				cout << "0) Exit" << endl;
+				int n; cin >> n;
+				switch (n) {
+				case 0:
+					system("cls");
+					cout << "Exit";
+					system("pause");
+					break;
+				case 1:
+					system("cls");
+					cout << "Sign in:" << endl;
+					if (client.log_in_client() == true)
+						menu_client();
+					
+					system("pause");
+					break;
+				case 2:
+					system("cls");
+					client.registerUser();
+					system("cls");
+					cout << "Sign in:" << endl;
+					if (client.log_in_client() == true)
+						menu_client();
+					system("pause");
+					break;
+
+					/*case 3:
+						menu_client_not_login();
+						break;*/
+				default:
+					cout << "FAULT";
+					break;
+				}
+				system("pause");
+			}
+		} while (choose != 0);
+
+	}
 };

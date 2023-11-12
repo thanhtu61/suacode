@@ -9,11 +9,13 @@ class User;
 class Client:public User
 {
 public:
+	void add_product_to_order(){}
 	bool log_in_client() {
 		ifstream is;
 		is.open("accountClient.txt", ios::in);
 
-		cout << "enter\nuser name:";
+		cout << "user name:";
+		cin.ignore();
 		char* u = new char[50]; cin.getline(u, 50);
 		cout << "password:";
 		int p; cin >> p;
@@ -54,6 +56,7 @@ public:
 			cout << "Username already exists. Registration failed." << endl;
 			return;
 		}
+
 		ofstream os;
 		os.open("accountClient.txt", ios::app);
 		os << a.user << ", " << a.password << endl;
@@ -61,18 +64,18 @@ public:
 		os.close();
 
 		ifstream filein;
-		int numberClient=0;
+		int numberClient=1;
 		filein.open("Client.txt", ios::in);
 		while (!filein.eof()) {
 			string temp;
 			getline(filein, temp);
 			numberClient++; }
-		cout << "a";
+
 		filein.close();
 
 		ofstream fileout;
 		fileout.open("Client.txt", ios::app);
-		fileout << numberClient << ", " << a.user << ", " << a.address;
+		fileout <<"\n"<< numberClient << ", " << a.user << ", " << a.address;
 		fileout.close();
 	}
 	void read_client(ifstream& filein) {

@@ -14,8 +14,8 @@
 using namespace std;
 
 int main() {
-	OrderManagement a;
-	a.display_order();
+	Interface a;
+	a.menu();
 	
 }
 
