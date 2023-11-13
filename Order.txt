@@ -1,6 +1,2 @@
-thanhtu1, L1, 2500
-thanhtu1, L1, 2500
-thanhtu1, O1, 112
-thanhtu1, O1, 112
-thanhtu1, O1, 112, O2, 137
 thanhtu1, O1, 112, O2, 137, L1, 2500
+qqqq, L1, 2500, C2, 1990

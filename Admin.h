@@ -30,6 +30,6 @@ public:
 	void del_client();
 	//account
 	bool log_in_admin();
-	
+	void read_list_order();
 };
 

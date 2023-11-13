@@ -1,6 +1,2 @@
-1, name, adpec
-2, name1, addd
-3, nam, gfv
-4, tien, namdinh
-5, a, 1
-6, thanhson, nam
+1, thanhtu1, adpec
+2, qqqq, q

@@ -26,6 +26,7 @@ public:
 			cout << "4) Product information" << endl;
 			cout << "5) Client information" << endl;
 			cout << "6) Delete client" << endl;
+			cout << "7) read_list_order" << endl;
 			cout << "Your choice is:" ;
 			cin >> check;
 			switch (check) {
@@ -66,6 +67,11 @@ public:
 				admin.del_client();
 				system("pause");
 				break;
+			case 7:
+				system("cls");
+				admin.read_list_order();
+				system("pause");
+				break;
 						}
 
 			} while (check != 0);
@@ -80,6 +86,7 @@ public:
 			cout << "3) Computer information" << endl;
 			cout << "4) Other information" << endl;
 			cout << "5) Add product to order" << endl;
+			cout << "6) Display order" << endl;
 			cout << "0) Exit" << endl;
 			cout << "Your choice is:";
 			cin >> check;
@@ -113,7 +120,12 @@ public:
 				system("cls");
 				client.add_product_to_order();
 				system("pause");
-				return ;
+				break ;
+			case 6:
+				system("cls");
+				client.read_order();
+				system("pause");
+				break;
 			}
 
 		} while (check !=0);

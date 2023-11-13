@@ -120,6 +120,40 @@
 		}
 		fileout.close();
 	}
+
+	void  Client::read_order() {
+		ifstream filein;
+		filein.open("Order.txt", ios::in);
+		string temp;
+		string temp1;
+		string temp2;
+		double temp3;
+
+		getline(filein, temp, ',');
+		while (temp != user) {
+			getline(filein, temp1, '\n');
+			getline(filein, temp, ',');
+		}
+		cout << user << endl;
+		filein.seekg(1, 1);
+		char check_n = ',';
+		while (check_n == ',') {
+			char check = ' ';
+			filein >> check;
+			if (check != ' ') {
+				filein.seekg(-1, ios::cur);
+				
+				getline(filein, temp2, ',');
+				cout << "ID:" << temp2 << "\t";
+				filein.seekg(1, 1);
+				filein >> temp3;
+				cout << "Price:" << temp3 << endl;
+				filein >> check_n;
+				
+			}
+			else return;
+		}
+	}
 	//void Client::add_product_to_order() {
 	//	ofstream fileout;
 	//	fileout.open("Order.txt", ios::app);

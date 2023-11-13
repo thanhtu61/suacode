@@ -121,4 +121,43 @@ Admin::~Admin() {
 		return false;
 	}
 
+	void  Admin::read_list_order() {
+	Item<Client>* current = clientList->getHead();
+	
+	while (current != nullptr) {
+		ifstream filein;
+		filein.open("Order.txt", ios::in);
+		string temp;
+		string temp1;
+		string temp2;
+		double temp3;
+		getline(filein, temp, ',');
+		while (temp != current->data->get_user()) {
+			getline(filein, temp1, '\n');
+			getline(filein, temp, ',');
+		}
+		cout << current->data->get_user() << endl;
+		filein.seekg(1, 1);
+		char check_n = ',';
+		while (check_n == ',') {
+			char check = ' ';
+			filein >> check;
+			if (check != ' ') {
+				filein.seekg(-1, ios::cur);
 
+				getline(filein, temp2, ',');
+				cout << "ID:" << temp2 << "\t";
+				filein.seekg(1, 1);
+				filein >> temp3;
+				cout << "Price:" << temp3 << endl;
+				filein >> check_n;
+
+			}
+			else break;
+		}
+		current = current->next;
+		filein.close();
+	} 
+}
+	
+	

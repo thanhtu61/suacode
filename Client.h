@@ -15,5 +15,6 @@ public:
 	void read_client(ifstream& filein);
 	//order
 	void add_product_to_order();
+	void read_order(); 
 };
 
