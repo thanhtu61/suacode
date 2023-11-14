@@ -2,6 +2,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<iomanip>
 using namespace std;
 class Product {
 protected:
@@ -18,11 +19,13 @@ public:
     double getPrice();
     void setName(string n);
     void setPrice(double n);
+    virtual void displayp(Product*)=0;
+    virtual void insert() = 0;
     //operator
-    friend std::ostream& operator<<(std::ostream& os, Product* a);
-    friend std::istream& operator >> (std::istream& is, Product* a);
+    friend ostream& operator<<(std::ostream& os, Product* a);
+    friend istream& operator >> (std::istream& is, Product* a);
     //file
-    virtual void read_file_product(ifstream& filein);
-    void write_file(Product* a);
+    virtual void read_file_product(ifstream& filein)=0;
+    virtual void write_file_product()=0;
 };
 

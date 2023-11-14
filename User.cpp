@@ -34,24 +34,17 @@ istream& operator>>(istream& is, User& a)
 	return is;
 }
 void User::display_product() {
-	Item<Product>* current = new Item<Product>;
-	current = ProductList->getHead();
-	while (current != nullptr) {
-		cout << "ID:" << current->data->getproductId() << "   ";
-		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
-		cout << "price:" << current->data->getPrice() << "   ";
-		current = current->next;
-		cout << endl;
-	}
+	
+	display_laptop(); cout << endl;
+	display_computer(); cout << endl;
+	display_other(); cout << endl;
 }
 void User::display_laptop() {
 	Item<Product>* current = new Item<Product>;
 	current = LaptopList->getHead();
-	cout << "LAPTOP:" << endl;
+	cout << "LAPTOP:" <<endl; 
 	while (current != nullptr) {
-		cout << "ID:" << current->data->getproductId() << "   ";
-		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
-		cout << "price:" << current->data->getPrice() << "   ";
+		current->data->displayp(current->data);
 		current = current->next;
 		cout << endl;
 	}
@@ -61,9 +54,7 @@ void User::display_computer() {
 	current = ComputerList->getHead();
 	cout << "COMPUTER:" << endl;
 	while (current != nullptr) {
-		cout << "ID:" << current->data->getproductId() << "   ";
-		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
-		cout << "price:" << current->data->getPrice() << "   ";
+		current->data->displayp(current->data);
 		current = current->next;
 		cout << endl;
 	}
@@ -73,9 +64,7 @@ void User::display_other() {
 	current =OtherList->getHead();
 	cout << "OTHER:" << endl;
 	while (current != nullptr) {
-		cout << "ID:" << current->data->getproductId() << "   ";
-		cout << "name:" << left << setw(25) << current->data->getName() << "   ";
-		cout << "price:" << current->data->getPrice() << "   ";
+		current->data->displayp(current->data);
 		current = current->next;
 		cout << endl;
 	}
