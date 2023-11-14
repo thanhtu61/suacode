@@ -1,9 +1,9 @@
-O1, Logitech_G102_Mouse, 112, q
-O2, Keyboard_A4Tech_Bloody, 137, w
-L1, Asus_F570ZD-E4297T, 2500, e
-L2, Dell_5593_i5-1035G1, 5555, r
-L3, Asus_Vivobook_A515EA, 2200, trt
-C1, PC_CPS Gaming_G5-AMD, 1800, tye
-C2, PC_Asus_Rog_Strix_G10DK, 1990, te
-C3, PC_CPS_Gaming_G8-AMD, 4700, twt
+O1, Logitech_G102_Mouse, 112, Mouse
+O2, Keyboard_A4Tech_Bloody, 137, Keyboard
+L1, Asus_F570ZD-E4297T, 2500, Asus
+L2, Dell_5593_i5-1035G1, 5555, Dell
+L3, Asus_Vivobook_A515EA, 2200, Asus
+C1, PC_CPS Gaming_G5-AMD, 1800, AMD
+C2, PC_Asus_Rog_Strix_G10DK, 1990, INTEL
+C3, PC_CPS_Gaming_G8-AMD, 4700, AMD
 L5, ASD, 111, NEW

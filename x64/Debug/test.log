@@ -1,7 +1,8 @@
 ﻿  Admin.cpp
   Client.cpp
-  ComProduct.cpp
   Interface.cpp
+  LapProduct.cpp
+  OtherProduct.cpp
   Source.cpp
   User.cpp
   Generating Code...

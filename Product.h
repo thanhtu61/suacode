@@ -19,6 +19,7 @@ public:
     double getPrice();
     void setName(string n);
     void setPrice(double n);
+
     virtual void displayp(Product*)=0;
     virtual void insert() = 0;
     //operator

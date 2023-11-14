@@ -1,6 +1,5 @@
 #include "Client.h"
 
-
 	bool Client:: log_in_client() {
 		ifstream is;
 		is.open("accountClient.txt", ios::in);
@@ -86,7 +85,7 @@
 		display_product();
 
 		int check = 1;
-		cout << "\nChoose product: ";
+		cout << "\nChoose product(Enter ID): ";
 		cin.ignore(1,'\n');
 		while (check != 0) {
 			

@@ -129,7 +129,6 @@ public:
 			}
 
 		} while (check !=0);
-
 	}
 	void menu() {
 		int choose;
@@ -196,6 +195,5 @@ public:
 				system("pause");
 			}
 		} while (choose != 0);
-
 	}
 };
