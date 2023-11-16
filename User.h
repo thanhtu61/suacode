@@ -1,13 +1,14 @@
 #pragma once
-#include "Product.h"
+
 #include"List.h"
-#include"ComProduct.h"
-#include"LapProduct.h"
-#include"OtherProduct.h"
 #include <string>
 #include<iostream>
 #include<iomanip>
-
+#include "Product.h"
+#include"ComProduct.h"
+#include"LapProduct.h"
+#include"OtherProduct.h"
+#include"ScreenProduct.h"
 
 using namespace std;
 class User
@@ -21,6 +22,7 @@ protected:
 	List<Product>* ComputerList;
 	List<Product>* LaptopList;
 	List<Product>* OtherList;
+	List<Product>* ScreenList;
 public:
 	User();
 	~User();
@@ -38,7 +40,8 @@ public:
 	void display_laptop();
 	void display_computer();
 	void display_other();
-	void read_list_product(List<Product>* products, List<Product>* laptop, List<Product>* computer, List<Product>* other);
+	void display_screen();
+	void read_list_product(List<Product>* products, List<Product>* laptop, List<Product>* computer, List<Product>* other, List<Product>*screen);
 	
 };
 

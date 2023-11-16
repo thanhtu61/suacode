@@ -21,12 +21,13 @@ Admin::~Admin() {
 	}
 	void Admin::add_product() {
 		cout << "Enter the element to be inserted:" << endl;
-		cout << "1)Laptop\n2)Computer\n3)Other\nEnter:";
+		cout << "1)Laptop\n2)Computer\n3)Screen\n4)Other\nEnter:";
 		int n; cin >> n;
 		Product* newItem=NULL;
 		if (n == 1) {	newItem = new LapProduct;}
 		else if (n == 2) {	newItem = new ComProduct;}
-		else if (n == 3) { newItem = new OtherProduct; }
+		else if (n == 3) {	newItem = new ScreenProduct;}
+		else if (n == 4) { newItem = new OtherProduct; }
 		else {
 			cout << "Enter wrong";
 		}
@@ -37,12 +38,13 @@ Admin::~Admin() {
 
 	void Admin::update_product() {
 		cout << "\nupdate product:\n";
-		cout << "1)Laptop\n2)Computer\n3)Other\nEnter:";
+		cout << "1)Laptop\n2)Computer\n3)Screen\n4)Other\nEnter:";
 		int n; cin >> n;
 		Product* upProduct = NULL;
 		if (n == 1) { upProduct = new LapProduct; }
 		else if (n == 2) { upProduct = new ComProduct; }
-		else if (n == 3) { upProduct = new OtherProduct; }
+		else if (n == 3) { upProduct = new ScreenProduct; }
+		else if (n == 4) { upProduct = new OtherProduct; }
 		else {
 			cout << "Enter wrong";
 		}

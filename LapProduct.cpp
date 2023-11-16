@@ -28,7 +28,7 @@ istream& operator >> (std::istream& is, LapProduct* a) {
     cout << "ID:"; is >> a->productId;
     cout << "Name:";	is >> a->name;
     cout << "Price:";  is >> a->price;
-    cout << "Description:";  is >> a->Brand;
+    cout << "Brand:";  is >> a->Brand;
     return is;
 }
 void LapProduct::read_file_product(ifstream& filein) {

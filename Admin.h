@@ -7,6 +7,7 @@
 #include"ComProduct.h"
 #include"LapProduct.h"
 #include"OtherProduct.h"
+#include"ScreenProduct.h"
 
 using namespace std;
 class User;

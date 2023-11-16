@@ -135,6 +135,7 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="OtherProduct.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ScreenProduct.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
@@ -147,6 +148,7 @@
     <ClInclude Include="List.h" />
     <ClInclude Include="OtherProduct.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="ScreenProduct.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>

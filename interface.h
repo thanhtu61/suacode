@@ -47,7 +47,7 @@ public:
 					break;
 			case 3:
 					system("cls");
-					admin.delete_product();
+					admin.delete_product();	
 					system("pause");
 					break;
 			case 4:
@@ -85,8 +85,9 @@ public:
 			cout << "2) Laptop information" << endl;
 			cout << "3) Computer information" << endl;
 			cout << "4) Other information" << endl;
-			cout << "5) Add product to order" << endl;
-			cout << "6) Display order" << endl;
+			cout << "5) Screen information" << endl;
+			cout << "6) Add product to order" << endl;
+			cout << "7) Display order" << endl;
 			cout << "0) Exit" << endl;
 			cout << "Your choice is:";
 			cin >> check;
@@ -118,10 +119,15 @@ public:
 				break;
 			case 5:
 				system("cls");
+				client.display_screen();
+				system("pause");
+				break;
+			case 6:
+				system("cls");
 				client.add_product_to_order();
 				system("pause");
 				break ;
-			case 6:
+			case 7:
 				system("cls");
 				client.read_order();
 				system("pause");
